@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nawaz-Sir</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <link rel="icon" href="../images/fovimg.webp" type="image/png">
+    <link rel="stylesheet" href="sidepannel.css">
+    <style>
+        /* Your CSS styles */
+        .side-panel {
+            width: 250px;
+            height: 100%;
+            background-color:fff;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .sidepannel-heading {
+        text-align: center; /* Centers text and inline elements */
+        margin left: 40px;
+
+       }
+       @media(min-width:768px){
+        .sidepannel-heading{
+            margin-left:40%;
+        }
+       }
+        @media(max-width:768px){
+        .sidepannel-heading{
+            margin-left:20%;
+        }
+
+       }
+
+       .logo1 {
+       display: inline-block; /* Ensures the image behaves like inline content */
+       margin left: 40px;
+       }
+
+
+        .logoo {
+            padding: 15px;
+            background: #444;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu ul li {
+            padding: 10px 15px;
+        }
+
+        .nav-menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu ul li a i {
+            margin-right: 10px;
+        }
+
+        .nav-menu .dropdown {
+            display: none;
+            background: #555;
+        }
+
+        .hamburger {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: #333;
+            z-index: 1001;
+            cursor: pointer;
+        }
+
+        /* Styles for mobile screens */
+        @media screen and (max-width: 768px) {
+            .side-panel {
+                width: 40%;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .side-panel {
+                transform: translateX(-100%);
+            }
+
+            .side-panel.open {
+                transform: translateX(0);
+            }
+        }
+
+        /* Optional: Style for dropdown menu */
+        .dropdown li a {
+            padding: 10px 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<div class="side-panel" id="sidePanel">
+    <div class="logoo">
+        <h2>Admin Panel</h2>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <!-- Existing Dropdown Menu -->
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="homepageDropdown"><i class="fas fa-home"></i>Homepage</a>
+                <ul class="dropdown homepageDropdown">
+                    <li><a href="../homepage-snacks/index.php">Slider</a></li>
+                    <li><a href="../homepage-banner/index.php">Our Popular Courses</a></li>
+                    <li><a href="../homepage-categories/index.php">Upcoming Events</a></li>
+                    <li><a href="../homepage-cakes/index.php">Student Speak</a></li>
+                    <!--<li><a href="../homepage-snacks/index.php">Snacks</a></li>
+                    <li><a href="../homepage-pastries/index.php">Pastries</a></li>
+                    <li><a href="../homepage-packs/index.php">Packs</a></li>
+                    <li><a href="../homepage-deserts-breads/index.php">Desert & Breads</a></li>-->
+                </ul>
+            </li>
+            
+            <!-- New Dropdown Menu -->
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="first"><i class="fas fa-cog"></i>Course-Details</a>
+                <ul class="dropdown first">
+                
+              
+                <li><a href="../cakes-inner/index.php">8th Class</a></li>
+                <li><a href="../cakes-inner/index.php">9th Class</a></li>
+                <li><a href="../cakes-inner/index.php">10th Class</a></li>
+               
+              
+
+
+            </ul>
+            </li>
+
+             <!--<li>
+               <a href="javascript:void(0);" class="dropdown-toggle" data-target="9thclassdropdown"><i class="fa-regular fa-pen-to-square"></i>9th Class</a>
+                <ul class="dropdown 9thclassdropdown">
+                <li><a href="../strawberry-pastery-inner/index.php">Strawberry Pastery Inner-page</a></li>
+                <li><a href="../chocolate-walnut-pastery-innerpage/index.php">chocolate walnut Pastery Inner-page </a></li>
+               
+                <li><a href="../pinapple-pastery-inner/index.php">Pinapple Pastery Inner-page </a></li>
+
+                <li><a href="../pista-pastery-inner/index.php">pista Pastery Inner-page </a></li>
+                <li><a href="../blackforest-pastery-innerpage/index.php">Blackforest Pastery Inner-page </a></li>
+
+
+
+            </ul>
+            </li>
+
+            <li>-->
+                <!--<a href="javascript:void(0);" class="dropdown-toggle" data-target="10thclassDropdown"><i class="fa-regular fa-pen-to-square"></i>10th Class</a>
+                <ul class="dropdown 10thclassDropdown">
+                < <li><a href="../packs-inner/index.php">Packs Inner-page</a></li> 
+                                          <li><a href="../fruitbuscuit-innerpage/index.php">Fruit Biscuit Inner-page </a></li>
+
+                <li><a href="../chandbuscuit-innerpage/index.php">Chand Biscuit Inner-page </a></li>
+                <li><a href="../osmaniabuscuit-innerpage/index.php">Osmania Biscuit Inner-page </a></li>
+                <li><a href="../kajubuscuit-innerpage/index.php">Kaju Biscuit Inner-page </a></li>
+                <li><a href="../pista-biscuit-innerpage/index.php">Pista Biscuit Inner-page </a></li>
+                <li><a href="../chocolate-kaju-buscuit-innerpage/index.php">Chocolate Kaju Biscuit Inner-page </a></li>
+                </ul>
+            </li>
+
+            <li>-->
+                <!--<a href="javascript:void(0);" class="dropdown-toggle" data-target="snacksDropdown"><i class="fa-regular fa-pen-to-square"></i>snacks inner</a>
+                <ul class="dropdown snacksDropdown">
+                 <li><a href="../snacks-innerpage/index.php">Snacks Inner-page</a></li> 
+                <li><a href="../sandwich-inner/index.php">Sandwich Inner-page</a></li>
+                <li><a href="../chinese-innerpage/index.php">Chinese Inner-page</a></li>
+                <li><a href="../rolls-innerpage/index.php">Rolls Inner-page</a></li>
+                <li><a href="../cup-cake-inner/index.php">Rolls Inner-page</a></li>
+                <li><a href="../pizza-innerpage/index.php">Pizza Inner-page </a></li>
+                <li><a href="../burger-innerpage/index.php">Burger Inner-page </a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="breadDropdown"><i class="fa-regular fa-pen-to-square"></i>Breads</a>
+                <ul class="dropdown breadDropdown">
+                <li><a href="../deserts-breads-inner/index.php">Desert & Breads Inner-page</a></li>
+                <li><a href="../brownies-innerpage/index.php">Brownies Inner-page</a></li>
+                <li><a href="../breads-innerpage/index.php">Breads Inner-page</a></li>
+                <li><a href="../toast-innerpage/index.php">Toast Inner-page</a></li>
+                <li><a href="../buns-innerpage/index.php">Buns Inner-page </a></li>
+           
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="cupcakeDropdown"><i class="fa-regular fa-pen-to-square"></i>Cup Cakes</a>
+                <ul class="dropdown cupcakeDropdown">
+               
+                <li><a href="../cupcake-innerpage/index.php">Cupcake  Inner-page </a></li>
+
+                <li><a href="../cupcake1-innerpage/index.php">Cupcake 1 Inner-page </a></li>
+                <li><a href="../cupcake2-innerpage/index.php">Cupcake 2 Inner-page </a></li>
+                <li><a href="../cupcake3-innerpage/index.php">Cupcake 3 Inner-page </a></li>
+                <li><a href="../cupcake4-innerpage/index.php">Cupcake 4 Inner-page </a></li>
+                
+           
+                </ul>
+            </li>
+
+
+
+              
+
+
+            </ul>
+            </li>-->
+
+           
+            
+            
+            
+
+             
+            
+
+
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="secondDropdown"><i class="fa-regular fa-pen-to-square"></i>Variety Inner-Page</a>
+                <ul class="dropdown secondDropdown">
+                <li><a href="../snacks-variety/index.php">Snacks Variety</a></li>
+                <li><a href="../pastries-variety/index.php">Pastery Variety</a></li>
+                <li><a href="../packs-variety/index.php">Packs Variety</a></li>
+                <li><a href="../deserts-variety/index.php">Deserts Variety</a></li>
+                <li><a href="../breads-variety/index.php"> Breads Variety </a></li>
+               
+
+               
+                </ul>
+            </li>
+
+            
+            <!--<li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="thirdDropdown"><i class="fa-regular fa-pen-to-square"></i>Product Details</a>
+                <ul class="dropdown thirdDropdown">
+
+
+                <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="plumDropdown"><i class="fa-regular fa-pen-to-square"></i>Plumcake Details</a>
+                <ul class="dropdown plumDropdown">
+                <li><a href="../plumcake-description/index.php">Plumcake Details </a></li>
+                <li><a href="../plumcake2-description/index.php">Eggless Rum Fruit</a></li>
+                <li><a href="../plumcake3-description/index.php">Rum Fruit</a></li>
+               
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="stepsDropdown"><i class="fa-regular fa-pen-to-square"></i>StepCake Details</a>
+                <ul class="dropdown stepsDropdown">
+                <li><a href="../stepcake1-description/index.php">White Finishing Theme Cake</a></li>
+                <li><a href="../stepcake2-description/index.php">Bride Step Cake</a></li>
+                <li><a href="../stepcake3-description/index.php">Dipping Theme Cake</a></li>
+                <li><a href="../stepcake4-description/index.php">Anniversary Theme Cake</a></li>
+
+               
+                </ul>
+            </li>
+
+
+
+
+            
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="coolDropdown"><i class="fa-regular fa-pen-to-square"></i>Coolcake Details</a>
+                <ul class="dropdown coolDropdown">
+                <li><a href="../coolcake1-description/index.php">Butter Scotch</a></li>
+                <li><a href="../coolcake2-description/index.php">Strawberry Cake</a></li>
+
+                <li><a href="../coolcake3-description/index.php">Pineapple Cake</a></li>
+                <li><a href="../coolcake4-description/index.php">Lychee Cake</a></li>
+                <li><a href="../coolcake5-description/index.php">Mango Cake</a></li>
+                <li><a href="../coolcake6-description/index.php">Dry Fruit Cake</a></li>
+                <li><a href="../coolcake7-description/index.php">Chocolate Chips Cake</a></li>
+                <li><a href="../coolcake8-description/index.php">White Forest Cake</a></li>
+
+
+               
+                </ul>
+            </li>
+
+             
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="fancyDropdown"><i class="fa-regular fa-pen-to-square"></i>Fancycake Details</a>
+                <ul class="dropdown fancyDropdown">
+               
+                <li><a href="../fanycake1-description/index.php">CHOCOLATE FANCY CAKE</a></li>
+                <li><a href="../fanycake2-description/index.php">CHERRY FANCY CAKE</a></li>
+
+
+               
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="cakeDropdown"><i class="fa-regular fa-pen-to-square"></i>Cake Details</a>
+                <ul class="dropdown cakeDropdown">
+               
+                <li><a href="../cake1-description/index.php">Red Velvet Cake</a></li>
+                <li><a href="../cake2-description/index.php">Eggless Mawa Cake</a></li>
+                <li><a href="../cake3-description/index.php">Dates &amp; Walnut</a></li>
+                <li><a href="../cake4-description/index.php">Orange Velvet Cake</a></li>
+
+
+               
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="sandwichDropdown"><i class="fa-regular fa-pen-to-square"></i>Sandwich Details</a>
+                <ul class="dropdown sandwichDropdown">
+               
+                <li><a href="../sandwitch1-description/index.php">Veg Sandwich</a></li>
+                <li><a href="../sandwitch2-description/index.php">Chicken Sandwich</a></li>
+                <li><a href="../sandwitch3-description/index.php">Veg Grill Sandwich</a></li>
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="chineseDropdown"><i class="fa-regular fa-pen-to-square"></i>Chinese Details</a>
+                <ul class="dropdown chineseDropdown">
+               
+                <li><a href="../chinese1-description/index.php">Crispy Fried Chicken</a></li>
+                <li><a href="../chinese2-description/index.php">Chicken 65</a></li>
+                <li><a href="../chinese3-description/index.php">Chilli Chicken</a></li>
+                <li><a href="../chinese4-description/index.php">Veg Manchurian</a></li>
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="rollsDropdown"><i class="fa-regular fa-pen-to-square"></i>Rolls Details</a>
+                <ul class="dropdown rollsDropdown">
+               
+                  
+                <li><a href="../rolls1-description/index.php">Chicken Spring Roll</a></li>
+                <li><a href="../rolls2-description/index.php">Chicken Hot Dogs</a></li>
+                <li><a href="../rolls3-description/index.php">Chicken 65 Dinner roll</a></li>
+                <li><a href="../rolls4-description/index.php">Chicken Salad Roll</a></li>
+                <li><a href="../rolls5-description/index.php">Chicken Shawarma</a></li>
+                <li><a href="../rolls6-description/index.php">Veg Roll</a></li>
+                <li><a href="../rolls7-description/index.php">Veg Spring Roll</a></li>
+                <li><a href="../rolls8-description/index.php">Veg Hot Dog</a></li>
+                <li><a href="../rolls9-description/index.php">Veg Salad Roll</a></li>
+                <li><a href="../rolls10-description/index.php">Veg Salad Roll</a></li>
+                
+
+               
+                </ul>
+            </li>
+
+
+            
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="pizzaDropdown"><i class="fa-regular fa-pen-to-square"></i>Pizza Details</a>
+                <ul class="dropdown pizzaDropdown">
+               
+                
+                <li><a href="../pizza1-description/index.php">Chicken Pizza Small</a></li>
+                <li><a href="../pizza2-description/index.php">Chicken Pizza Big</a></li>
+                <li><a href="../pizza3-description/index.php">Veg Pizza Big</a></li>
+                <li><a href="../pizza4-description/index.php">Panner Pizza</a></li>
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="burgerDropdown"><i class="fa-regular fa-pen-to-square"></i>Burger Details</a>
+                <ul class="dropdown burgerDropdown">
+               
+                
+                <li><a href="../burger1-description/index.php">Veg Crispy Burger</a></li>
+                <li><a href="../burger2-description/index.php">Chicken Crispy Burger</a></li>
+                <li><a href="../burger3-description/index.php">Veg Burger</a></li>
+                <li><a href="../burger4-description/index.php">Panner Burger</a></li>
+               
+                </ul>
+            </li>
+
+            
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="pastryDropdown"><i class="fa-regular fa-pen-to-square"></i>Pastry Details</a>
+                <ul class="dropdown pastryDropdown">
+               
+                  
+                <li><a href="../chocolatewalnut-pastery-description/index.php">chocolate walnut pastery Details </a></li>
+
+                <li><a href="../strawberry-pastery-description/index.php">Strawberry Pastery  Details </a></li>
+                <li><a href="../pineapple-pastery-description/index.php">pineapple  Pastery  Details </a></li>
+                <li><a href="../pista-pastery-description/index.php">Pista  Pastery  Details </a></li>
+                <li><a href="../blackforest-pastery-description/index.php">Blackforest  Pastery  Details </a></li>
+                
+
+               
+                </ul>
+            </li>
+
+
+               
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="cupcakesDropdown"><i class="fa-regular fa-pen-to-square"></i>CupCake Details</a>
+                <ul class="dropdown cupcakesDropdown">
+               
+                  
+                <li><a href="../cupcake1-description/index.php">Blue Berry Cupcake</a></li>
+                <li><a href="../cupcake2-description/index.php">Red Velvet Cupcake</a></li>
+                <li><a href="../cupcake3-description/index.php">Chocolate Lava Cupcake</a></li>
+                <li><a href="../cupcake4-description/index.php">Orange Velvet Details</a></li>
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="brownieDropdown"><i class="fa-regular fa-pen-to-square"></i>Brownie Details</a>
+                <ul class="dropdown brownieDropdown">
+               
+                
+                <li><a href="../brownie1-description/index.php">Swiss Roll Details </a></li>
+                <li><a href="../brownie2-description/index.php">Chocolate Swiss Roll</a></li>
+                <li><a href="../brownie3-description/index.php">Red Velvet Details </a></li>
+                <li><a href="../brownie4-description/index.php">Chocolate Fudge Brownie</a></li>
+                <li><a href="../brownie5-description/index.php">Florentine Details </a></li>
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="toastDropdown"><i class="fa-regular fa-pen-to-square"></i>Toast Details</a>
+                <ul class="dropdown toastDropdown">
+               
+                
+                
+                <li><a href="../toast1-description/index.php">Fruit Toast Details </a></li>
+                <li><a href="../toast2-description/index.php">Kaju Toast Details </a></li>
+                <li><a href="../toast3-description/index.php">Fennel Toast Details </a></li>
+
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="bunDropdown"><i class="fa-regular fa-pen-to-square"></i>Buns Details</a>
+                <ul class="dropdown bunDropdown">
+               
+                
+                <li><a href="../bun1-description/index.php">Sheermal Details </a></li>
+                <li><a href="../bun2-description/index.php">Pav Bread Details </a></li>
+                <li><a href="../bun3-description/index.php">Cream Bun Details </a></li>
+                <li><a href="../bun4-description/index.php">Cream Roll Details </a></li>
+                <li><a href="../bun5-description/index.php">Dilkush Details </a></li>
+                <li><a href="../bun6-description/index.php">Dilpasand Details </a></li>
+                <li><a href="../bun7-description/index.php">Fine Biscuit Details </a></li>
+          
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="biscuitsDropdown"><i class="fa-regular fa-pen-to-square"></i>Biscuit Details</a>
+                <ul class="dropdown biscuitsDropdown">
+               
+                 <li><a href="../fruitbuscuit-description/index.php">Fruit  Biscuit  Details </a></li>
+
+                <li><a href="../chandbiscuit-description/index.php">Chandbuscuit  Details </a></li>
+                <li><a href="../osmaniabiscuit-description/index.php">Osmania Biscuit  Details </a></li>
+                <li><a href="../kajubiscuit-description/index.php">Kaju Biscuit  Details </a></li>
+                <li><a href="../pista-biscuit-description/index.php">Pista Biscuit  Details </a></li>
+                <li><a href="../chocolate-kaju-description/index.php">Chocolate Kaju Biscuit  Details </a></li>
+                <li><a href="../badambiscuit-description/index.php">Badam  Biscuit  Details </a></li>
+                <li><a href="../Macron-biscuit-description/index.php">Macron  Biscuit  Details </a></li>
+                <li><a href="../salt-biscuit-description/index.php">Salt  Biscuit  Details </a></li>
+
+               
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-target="breadsDropdown"><i class="fa-regular fa-pen-to-square"></i>Bread Details</a>
+                <ul class="dropdown breadsDropdown">
+               
+                
+                
+                <li><a href="../bread1-description/index.php">Milk Bread Details </a></li>
+                <li><a href="../bread2-description/index.php">Sandwich Bread Details </a></li>
+                <li><a href="../bread3-description/index.php"> Jumbo Bread Details </a></li>
+                <li><a href="../bread4-description/index.php">Multigrain Bread Details </a></li>
+                <li><a href="../bread5-description/index.php">Wheat Bread Details </a></li>
+
+
+               
+                </ul>
+            </li>
+
+
+
+
+
+
+
+                
+              
+              
+
+                
+
+                
+          
+
+
+                </ul>
+            </li>-->
+
+            
+
+            <!-- Logout Link -->
+            <li><a href="../login/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+</div>
+
+   
+ 
+    <div class="hamburger" id="toggleButton">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div>
+
+</div>
+
+<div class="sidepannel-heading">
+    <img src="logo (4).webp" alt="Logo" class="logo1">
+    </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sidePanel = document.getElementById('sidePanel');
+    const toggleButton = document.getElementById('toggleButton');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Toggle side panel visibility
+    toggleButton.addEventListener('click', function () {
+        sidePanel.classList.toggle('open');
+    });
+
+    // Toggle dropdown menu visibility
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function () {
+            const targetDropdownClass = this.getAttribute('data-target');
+            const targetDropdown = document.querySelector('.' + targetDropdownClass);
+
+            // Toggle the visibility of the specific dropdown
+            targetDropdown.style.display = targetDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    // Close side panel when clicking outside of it
+    document.addEventListener('click', function (event) {
+        if (!sidePanel.contains(event.target) && !toggleButton.contains(event.target) && !hamburger.contains(event.target)) {
+            if (sidePanel.classList.contains('open')) {
+                sidePanel.classList.remove('open');
+            }
+        }
+    });
+});
+
+</script>
+</body>
+</html>
